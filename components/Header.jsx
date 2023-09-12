@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="flex justify-between items-center p-6">
+    <header className="flex justify-between items-center p-6 bg-white">
       <div>My-Cafe</div>
       <nav>
         <ul className="flex space-x-6">
