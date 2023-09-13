@@ -1,3 +1,5 @@
+import Card from "@/components/Card";
+
 export default function Home() {
   return (
     <main>
@@ -15,6 +17,12 @@ export default function Home() {
               Kakor
             </button>
           </div>
+        </section>
+        <section className=" flex m-6 font-serif space-x-3">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </section>
       </div>
     </main>
