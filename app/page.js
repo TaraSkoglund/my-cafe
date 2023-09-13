@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Card from "@/components/Card";
 
 export default function Home() {
@@ -30,6 +31,9 @@ export default function Home() {
           <Card />
           <Card />
           <Card />
+        </section>
+        <section>
+          <About />
         </section>
         <footer className="m-12 font-serif divide-y divide-black">
           <div></div>
