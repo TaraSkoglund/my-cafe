@@ -1,7 +1,11 @@
 export default function Card() {
   return (
-    <div>
-      <h2>Card</h2>
-    </div>
+    <section className="">
+      {/* <image></image> */}
+      <div className="flex justify-between">
+        <p>Kanellbulle</p>
+        <p>18kr</p>
+      </div>
+    </section>
   );
 }
