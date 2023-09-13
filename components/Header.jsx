@@ -5,9 +5,9 @@ export default function Header() {
       <div>My-Cafe</div>
       <nav className="md:block hidden">
         <ul className="flex space-x-6">
-          <li className="hover:bg-slate-200 p-1">Vårt Sortiment</li>
-          <li className="hover:bg-slate-200 p-1">Om Oss</li>
-          <li className="hover:bg-slate-200 p-1">Kontakta Oss</li>
+          <li className="hover:shadow-2xl p-1">Vårt Sortiment</li>
+          <li className="hover:shadow-2xl p-1">Om Oss</li>
+          <li className="hover:shadow-2xl p-1">Kontakta Oss</li>
         </ul>
       </nav>
       <button className="hover:bg-slate-200 p-1 md:hidden">

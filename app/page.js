@@ -4,16 +4,23 @@ export default function Home() {
   return (
     <main>
       <div>
+        <section>
+          {/* <image></image> */}
+          <div className="m-12 font-serif space-y-6">
+            <h1 className="text-7xl">My Cafe</h1>
+            <h1> Alltide en kaffe redo</h1>
+          </div>
+        </section>
         <section className="m-12 font-serif">
           <h1 className="text-2xl">Sortiment</h1>
           <div className="flex space-x-3 my-12 md:space-x-6">
-            <button className="py-1 px-6 border rounded-sm border-black md: py-3 px-9 ">
+            <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
               Bullar
             </button>
-            <button className="py-1 px-6 border rounded-sm border-black md: py-3 px-9 ">
+            <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
               Tårtor
             </button>
-            <button className="py-1 px-6 border rounded-sm border-black md: py-3 px-9 ">
+            <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
               Kakor
             </button>
           </div>
