@@ -28,9 +28,6 @@ export default function Home() {
         </section>
         <section className=" flex m-6 font-serif justify-evenly">
           <Card />
-          <Card />
-          <Card />
-          <Card />
         </section>
         <section>
           <About />
