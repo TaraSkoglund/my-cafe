@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Card from "@/components/Card";
 
 export default function Home() {
@@ -27,9 +28,9 @@ export default function Home() {
         </section>
         <section className=" flex m-6 font-serif justify-evenly">
           <Card />
-          <Card />
-          <Card />
-          <Card />
+        </section>
+        <section>
+          <About />
         </section>
         <footer className="m-12 font-serif divide-y divide-black">
           <div></div>
