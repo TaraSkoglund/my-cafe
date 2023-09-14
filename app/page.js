@@ -1,5 +1,5 @@
 import About from "@/components/About";
-import Card from "@/components/Card";
+import Assortment from "@/components/Assortment";
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
           </div>
         </section>
         <section className=" flex m-6 font-serif justify-evenly">
-          <Card />
+          <Assortment />
         </section>
         <section>
           <About />
