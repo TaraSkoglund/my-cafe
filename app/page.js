@@ -12,21 +12,8 @@ export default function Home() {
             <h1> Alltide en kaffe redo</h1>
           </div>
         </section>
-        <section className="m-12 font-serif">
-          <h1 className="text-2xl">Sortiment</h1>
-          <div className="flex space-x-3 my-12 md:space-x-6">
-            <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
-              Bullar
-            </button>
-            <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
-              Tårtor
-            </button>
-            <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
-              Kakor
-            </button>
-          </div>
-        </section>
-        <section className=" flex m-6 font-serif justify-evenly">
+
+        <section className=" flex font-serif justify-evenly">
           <Assortment />
         </section>
         <section>

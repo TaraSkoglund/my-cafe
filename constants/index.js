@@ -3,7 +3,7 @@ export const MOCK_PRODUCTS = [
     id: 1,
     typ: "Kaka",
     title: "Hallongrotor",
-    img: "@/assets/kaka1.jpeg",
+    img: "/assets/kaka1.jpeg",
     ingredients: [
       "Vetemjöl",
       "smör",
@@ -12,7 +12,7 @@ export const MOCK_PRODUCTS = [
       "hallonsylt",
       "bakpulver",
     ],
-    price: 58,
+    price: 29,
     description:
       "Duka upp till kafferep och dessa godbitar är en absolut favorit.Den lilla söta kakan är spröd och fylld med ljuvlig hallonsylt. Du får en fin kakpåse med 10 stycken av dessa godbitar i.",
   },
@@ -20,7 +20,7 @@ export const MOCK_PRODUCTS = [
     id: 2,
     typ: "Bulle",
     title: "Winnebulle",
-    img: "@/assets/bulle1.png",
+    img: "/assets/bulle1.png",
     ingredients: [
       "Vetemjöl",
       "smör",
@@ -32,7 +32,7 @@ export const MOCK_PRODUCTS = [
       "jäst",
       "salt",
     ],
-    price: 29,
+    price: 58,
     description:
       "Vår Winnebulle är ett mästerverk av brödbakning, bakat med omsorg och de finaste ingredienserna. Med sitt karakteristiska utseende och förföriska doft är det en klassisk favorit",
   },
@@ -40,7 +40,7 @@ export const MOCK_PRODUCTS = [
     id: 3,
     typ: "Bulle",
     title: "Croissant",
-    img: "@/assets/bulle2.jpeg",
+    img: "/assets/bulle2.jpeg",
     ingredients: [
       "Vetemjöl",
       "smör",
@@ -58,7 +58,7 @@ export const MOCK_PRODUCTS = [
     id: 4,
     typ: "Tårta",
     title: "Drottningtårta",
-    img: "@/assets/tårta3.jpeg",
+    img: "/assets/tårta3.jpeg",
     ingredients: [
       "Socker",
       "ägg",

@@ -2,22 +2,40 @@ import { MOCK_PRODUCTS } from "@/constants";
 import Card from "./Card";
 export default function Assortment() {
   return (
-    <ul className=" flex flex-row space-x-12">
-      {MOCK_PRODUCTS.map((product) => {
-        return (
-          <li key={product.id}>
-            <Card
-              id={product.id}
-              typ={product.typ}
-              title={product.title}
-              img={product.img}
-              ingredients={product.ingredients}
-              price={product.price}
-              description={product.description}
-            />
-          </li>
-        );
-      })}
-    </ul>
+    <section className=" font-serif">
+      <h1 className="text-2xl">Sortiment</h1>
+      <div className="flex space-x-3 my-12  md:space-x-6">
+        <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
+          Bullar
+        </button>
+        <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
+          Tårtor
+        </button>
+        <button className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl">
+          Kakor
+        </button>
+      </div>
+      <ul className=" grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4">
+        {MOCK_PRODUCTS.map((product) => {
+          return (
+            <li key={product.id}>
+              <Card
+                id={product.id}
+                typ={product.typ}
+                title={product.title}
+                img={product.img}
+                ingredients={product.ingredients}
+                price={product.price}
+                description={product.description}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
+}
+
+{
+  /* <ul className=" flex flex-row justify-evenly space-x-4"></ul> */
 }
