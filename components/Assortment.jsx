@@ -20,7 +20,7 @@ export default function Assortment() {
         {MOCK_PRODUCTS.map((product) => {
           return (
             <li key={product.id}>
-              <Link href={"/" + product.title}>
+              <Link href={product.href}>
                 <Card
                   id={product.id}
                   typ={product.typ}

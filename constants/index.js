@@ -3,6 +3,7 @@ export const MOCK_PRODUCTS = [
     id: 1,
     typ: "Kaka",
     title: "Hallongrotor",
+    href: "/hallongrotor",
     img: "/assets/kaka1.jpeg",
     ingredients: [
       "Vetemjöl",
@@ -20,6 +21,7 @@ export const MOCK_PRODUCTS = [
     id: 2,
     typ: "Bulle",
     title: "Winnebulle",
+    href: "/winnebulle",
     img: "/assets/bulle1.png",
     ingredients: [
       "Vetemjöl",
@@ -40,6 +42,7 @@ export const MOCK_PRODUCTS = [
     id: 3,
     typ: "Bulle",
     title: "Croissant",
+    href: "/croissant",
     img: "/assets/bulle2.jpeg",
     ingredients: [
       "Vetemjöl",
@@ -58,6 +61,7 @@ export const MOCK_PRODUCTS = [
     id: 4,
     typ: "Tårta",
     title: "Drottningtårta",
+    href: "/drottningtarta",
     img: "/assets/tårta3.jpeg",
     ingredients: [
       "Socker",

@@ -1,11 +1,9 @@
 import { MOCK_PRODUCTS } from "@/constants";
 import Image from "next/image";
 export default function Page({ params }) {
-  console.log(MOCK_PRODUCTS);
   const product = MOCK_PRODUCTS.filter(
-    (product) => product.title === params.name
+    (product) => product.href.slice(1) === params.name
   )[0];
-  console.log("numer 1", product);
 
   return (
     <section>
