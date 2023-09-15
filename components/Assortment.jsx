@@ -1,4 +1,5 @@
 import { MOCK_PRODUCTS } from "@/constants";
+import Link from "next/link";
 import Card from "./Card";
 export default function Assortment() {
   return (
@@ -19,23 +20,21 @@ export default function Assortment() {
         {MOCK_PRODUCTS.map((product) => {
           return (
             <li key={product.id}>
-              <Card
-                id={product.id}
-                typ={product.typ}
-                title={product.title}
-                img={product.img}
-                ingredients={product.ingredients}
-                price={product.price}
-                description={product.description}
-              />
+              <Link href={"/" + product.title}>
+                <Card
+                  id={product.id}
+                  typ={product.typ}
+                  title={product.title}
+                  img={product.img}
+                  ingredients={product.ingredients}
+                  price={product.price}
+                  description={product.description}
+                />
+              </Link>
             </li>
           );
         })}
       </ul>
     </section>
   );
-}
-
-{
-  /* <ul className=" flex flex-row justify-evenly space-x-4"></ul> */
 }
