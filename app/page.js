@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Assortment from "@/components/Assortment";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,7 +9,9 @@ export default function Home() {
         <section>
           {/* <image></image> */}
           <div className="m-12 font-serif space-y-6">
-            <h1 className="text-7xl">My Cafe</h1>
+            <Link href="/">
+              <h1 className="text-7xl">My Cafe</h1>
+            </Link>
             <h1> Alltide en kaffe redo</h1>
           </div>
         </section>
