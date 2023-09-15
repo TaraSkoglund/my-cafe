@@ -38,7 +38,3 @@ export default function Assortment() {
     </section>
   );
 }
-
-{
-  /* <ul className=" flex flex-row justify-evenly space-x-4"></ul> */
-}

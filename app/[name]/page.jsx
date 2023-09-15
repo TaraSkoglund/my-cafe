@@ -1,33 +1,38 @@
-// import Image from "next/image";
+import { MOCK_PRODUCTS } from "@/constants";
+import Image from "next/image";
 export default function Page({ params }) {
-  // const router = useRouter();
-  // return <p>Post: {router.query.slug}</p>;
+  console.log(MOCK_PRODUCTS);
+  const product = MOCK_PRODUCTS.filter(
+    (product) => product.title === params.name
+  )[0];
+  console.log("numer 1", product);
+
   return (
     <section>
       <div>
         <div className="m-12 font-serif">
-          <h1 className="text-2xl">{params.name}</h1>
+          <h1 className="text-2xl">{product.title}</h1>
         </div>
         <div className="m-12 font-serif text-xl">
           <h2>Inehåll</h2>
           <ul>
-            <li>{params.ingredients}</li>
+            <li>{product.ingredients}</li>
           </ul>
         </div>
         <div className="m-12 font-serif text-xl">
           <h2>Beskrivning</h2>
-          <p>{params.description}</p>
-          <p>{params.price}</p>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
         </div>
       </div>
       <div>
-        {/* <Image
-          src={img}
+        <Image
+          src={product.img}
           width={500}
           height={500}
-          alt={title}
+          alt={product.title}
           className="h-96 object-cover "
-        /> */}
+        />
       </div>
       <footer className="m-12 font-serif divide-y divide-black">
         <div></div>
