@@ -1,38 +1,44 @@
 import { MOCK_PRODUCTS } from "@/constants";
 import Image from "next/image";
 export default function Page({ params }) {
-  console.log(MOCK_PRODUCTS);
   const product = MOCK_PRODUCTS.filter(
-    (product) => product.title === params.name
+    (product) => product.href.slice(1) === params.name
   )[0];
-  console.log("numer 1", product);
 
   return (
     <section>
-      <div>
-        <div className="m-12 font-serif">
-          <h1 className="text-2xl">{product.title}</h1>
+      <div className="grid md:grid-cols-1 xl:grid-cols-2">
+        <div>
+          <div className="mx-12 mt-6 font-serif">
+            <h1 className="text-2xl">{product.title}</h1>
+          </div>
+          <div className="m-12 font-serif">
+            <h2 className="text-xl">Inehåll</h2>
+            <ul className="list-disc list-inside p-6 pb-0">
+              {product.ingredients.map((ingredient, index) => (
+                <li key={index} className="p-2">
+                  {ingredient}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mx-12 mb-6  font-serif">
+            <h2 className="py-6 text-xl">Beskrivning</h2>
+            <p>{product.description}</p>
+          </div>
+          <div className="flex mx-12 font-serif xl:justify-end">
+            <p>{product.price} kr</p>
+          </div>
         </div>
-        <div className="m-12 font-serif text-xl">
-          <h2>Inehåll</h2>
-          <ul>
-            <li>{product.ingredients}</li>
-          </ul>
+        <div className="flex justify-center m-12 pt-6 sm:pt-0 ">
+          <Image
+            src={product.img}
+            width={500}
+            height={500}
+            alt={product.title}
+            className="object-cover"
+          />
         </div>
-        <div className="m-12 font-serif text-xl">
-          <h2>Beskrivning</h2>
-          <p>{product.description}</p>
-          <p>{product.price}</p>
-        </div>
-      </div>
-      <div>
-        <Image
-          src={product.img}
-          width={500}
-          height={500}
-          alt={product.title}
-          className="h-96 object-cover "
-        />
       </div>
       <footer className="m-12 font-serif divide-y divide-black">
         <div></div>
