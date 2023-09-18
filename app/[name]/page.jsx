@@ -9,10 +9,10 @@ export default function Page({ params }) {
     <section>
       <div className="grid md:grid-cols-1 xl:grid-cols-2">
         <div>
-          <div className="mx-12 mt-6 font-serif">
+          <div className="mx-12 my-6 font-serif">
             <h1 className="text-2xl">{product.title}</h1>
           </div>
-          <div className="m-12 font-serif">
+          <div className="mx-12 my-6 font-serif">
             <h2 className="text-xl">Inehåll</h2>
             <ul className="list-disc list-inside p-6 pb-0">
               {product.ingredients.map((ingredient, index) => (
@@ -30,7 +30,7 @@ export default function Page({ params }) {
             <p>{product.price} kr</p>
           </div>
         </div>
-        <div className="flex justify-center m-12 pt-6 sm:pt-0 ">
+        <div className="flex justify-center m-12 pt-6 sm:pt-0">
           <Image
             src={product.img}
             width={500}
