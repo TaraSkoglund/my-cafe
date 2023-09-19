@@ -102,7 +102,7 @@ export const MOCK_PRODUCTS = [
   {
     id: 6,
     typ: "Tårta",
-    title: "Bjönbär,Lime och timjan tårta",
+    title: "Bjönbär o timjan tårta",
     href: "/bjonbarlimetimjan",
     img: "/assets/tårta4.jpeg",
     ingredients: [

@@ -1,3 +1,4 @@
+"use client";
 import { MOCK_PRODUCTS } from "@/constants";
 import Link from "next/link";
 import { useState } from "react";
@@ -43,7 +44,7 @@ export default function Assortment() {
           className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl"
           onClick={() => handleFilter("Alla")}
         >
-          Visa allt
+          Alla
         </button>
       </div>
       <ul className="grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4">
