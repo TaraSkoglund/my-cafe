@@ -13,7 +13,7 @@ export default function Home() {
             <Link href="/">
               <h1 className="text-7xl">My Cafe</h1>
             </Link>
-            <h1> Alltide en kaffe redo</h1>
+            <h1> Alltid en kaffe redo</h1>
           </div>
         </section>
 
