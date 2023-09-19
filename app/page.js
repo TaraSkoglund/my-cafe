@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Assortment from "@/components/Assortment";
+import Form from "@/components/Form";
 import Link from "next/link";
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
         </section>
         <section>
           <About />
+        </section>
+        <section>
+          <Form />
         </section>
         <footer className="m-12 font-serif divide-y divide-black">
           <div></div>
