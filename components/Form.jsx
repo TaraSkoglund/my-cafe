@@ -1,7 +1,11 @@
 "use client";
 import { useFormik } from "formik";
+import { useEffect, useState } from "react";
 import * as Yup from "yup";
+
 export default function Form() {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -29,8 +33,19 @@ export default function Form() {
     }),
     onSubmit: (values) => {
       console.log(values);
+      setFormSubmitted(true);
     },
   });
+
+  useEffect(() => {
+    if (formSubmitted) {
+      const timer = setTimeout(() => {
+        setFormSubmitted(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [formSubmitted]);
 
   return (
     <section className="m-12 font-serif">
@@ -128,6 +143,12 @@ export default function Form() {
           </button>
         </div>
       </form>
+
+      {formSubmitted && (
+        <p className="italic mx-5 my-6 duration-300">
+          Tack för meddelandet! <br /> Vi hör av oss så fort vi kan.
+        </p>
+      )}
     </section>
   );
 }
