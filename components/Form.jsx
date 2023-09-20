@@ -19,8 +19,8 @@ export default function Form() {
         .required("required"),
       email: Yup.string().email("Invalid email adress").required("required"),
       tel: Yup.string()
-        .max(12, "Must be 12 numbers or less")
-        .min(10, "Must be 10 numbers or more")
+        .max(11, "Must be 12 numbers or less")
+        .min(9, "Must be 10 numbers or more")
         .required("required"),
       massage: Yup.string()
         .max(150, "Must be 150 characters or less")
