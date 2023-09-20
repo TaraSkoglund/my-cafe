@@ -31,9 +31,10 @@ export default function Form() {
         .min(5, "Must be 5 characters or more")
         .required("required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       console.log(values);
       setFormSubmitted(true);
+      resetForm();
     },
   });
 
@@ -145,7 +146,11 @@ export default function Form() {
       </form>
 
       {formSubmitted && (
-        <p className="italic mx-5 my-6 duration-300">
+        <p
+          className={`italic mx-5 my-6 ${
+            formSubmitted ? "animate-fadeOut" : ""
+          }`}
+        >
           Tack för meddelandet! <br /> Vi hör av oss så fort vi kan.
         </p>
       )}
