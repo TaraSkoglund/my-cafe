@@ -2,8 +2,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 1,
     typ: "Kaka",
-    title: "Hallongrotor",
-    href: "/hallongrotor",
+    title: "Hallongrottor",
+    href: "/hallongrottor",
     img: "/assets/kaka1.jpeg",
     ingredients: [
       "Vetemjöl",
@@ -15,13 +15,13 @@ export const MOCK_PRODUCTS = [
     ],
     price: 29,
     description:
-      "Duka upp till kafferep och dessa godbitar är en absolut favorit.Den lilla söta kakan är spröd och fylld med ljuvlig hallonsylt. Du får en fin kakpåse med 10 stycken av dessa godbitar i.",
+      "Duka upp till kafferep och dessa godbitar är en absolut favorit. Den lilla söta kakan är spröd och fylld med ljuvlig hallonsylt. Du får en fin kakpåse med 10 stycken av dessa godbitar i.",
   },
   {
     id: 2,
     typ: "Bulle",
-    title: "Winnebulle",
-    href: "/winnebulle",
+    title: "Wienerbulle",
+    href: "/wienerbulle",
     img: "/assets/bulle1.png",
     ingredients: [
       "Vetemjöl",
@@ -36,7 +36,7 @@ export const MOCK_PRODUCTS = [
     ],
     price: 58,
     description:
-      "Vår Winnebulle är ett mästerverk av brödbakning, bakat med omsorg och de finaste ingredienserna. Med sitt karakteristiska utseende och förföriska doft är det en klassisk favorit",
+      "Vår Wienerbulle är ett mästerverk av brödbakning, bakat med omsorg och de finaste ingredienserna. Med sitt karakteristiska utseende och förföriska doft är det en klassisk favorit",
   },
   {
     id: 3,
@@ -80,8 +80,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 5,
     typ: "Kaka",
-    title: "Kademummakaka",
-    href: "/kademummakaka",
+    title: "Kardemummakaka",
+    href: "/kardemummakaka",
     img: "/assets/kaka2.jpeg",
     ingredients: [
       "gräddfil",
@@ -102,8 +102,8 @@ export const MOCK_PRODUCTS = [
   {
     id: 6,
     typ: "Tårta",
-    title: "Bjönbär o timjan tårta",
-    href: "/bjonbarlimetimjan",
+    title: "Björnbär o timjan tårta",
+    href: "/bjornbarlimetimjan",
     img: "/assets/tårta4.jpeg",
     ingredients: [
       "smör",

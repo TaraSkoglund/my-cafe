@@ -19,9 +19,9 @@ export default function Assortment() {
   };
 
   return (
-    <section className="font-serif">
+    <section className="font-serif mt-12">
       <h1 className="text-2xl">Sortiment</h1>
-      <div className="flex space-x-3 my-12 md:space-x-6">
+      <div className="flex flex-col md:flex-row my-12 gap-2">
         <button
           className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl"
           onClick={() => handleFilter("Bulle")}
@@ -67,10 +67,3 @@ export default function Assortment() {
     </section>
   );
 }
-
-// const typ = [];
-
-// const result = typ.filter(product.typ);
-// {
-//   MOCK_PRODUCTS.filter((product) => product.typ === filter);
-// }
