@@ -1,18 +1,47 @@
+"use client";
 import { Bars3Icon } from "@heroicons/react/24/outline";
+import { useEffect } from "react";
 export default function Header() {
+  useEffect(() => {
+    const scrollLinks = document.querySelectorAll(".scroll-link");
+
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const targetId = link.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop;
+
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+  }, []);
   return (
     <header className="flex justify-between items-center mx-12 my-4 bg-white font-serif ">
       <div>My-Cafe</div>
       <nav className="md:block hidden">
         <ul className="flex space-x-6">
           <li className="hover:shadow-2xl hover:border-b-2 border-current p-1">
-            Vårt Sortiment
+            <a href="#assortment" className="scroll-link">
+              Vårt Sortiment
+            </a>
           </li>
           <li className="hover:shadow-2xl hover:border-b-2 border-current p-1">
-            Om Oss
+            <a href="#about" className="scroll-link">
+              Om Oss
+            </a>
           </li>
           <li className="hover:shadow-2xl hover:border-b-2 border-current p-1">
-            Kontakta Oss
+            <a href="#contact" className="scroll-link">
+              Kontakta Oss
+            </a>
           </li>
         </ul>
       </nav>

@@ -26,13 +26,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className=" flex font-serif justify-evenly">
+        <section id="assortment" className=" flex font-serif justify-evenly">
           <Assortment />
         </section>
-        <section>
+        <section id="about">
           <About />
         </section>
-        <section>
+        <section id="contact">
           <Form />
         </section>
         <footer className="m-12 font-serif divide-y divide-black">
