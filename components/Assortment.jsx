@@ -23,31 +23,31 @@ export default function Assortment() {
       <h1 className="text-2xl">Sortiment</h1>
       <div className="flex flex-col md:flex-row my-12 gap-2">
         <button
-          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl"
+          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
           onClick={() => handleFilter("Bulle")}
         >
           Bullar
         </button>
         <button
-          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl"
+          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
           onClick={() => handleFilter("Tårta")}
         >
           Tårtor
         </button>
         <button
-          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl"
+          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
           onClick={() => handleFilter("Kaka")}
         >
           Kakor
         </button>
         <button
-          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl"
+          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
           onClick={() => handleFilter("Alla")}
         >
           Alla
         </button>
       </div>
-      <ul className="grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4">
+      <ul className="grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4 hover:border-b-2">
         {filteredProducts.map((product) => (
           <li key={product.id}>
             <Link href={product.href}>

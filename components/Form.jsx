@@ -138,7 +138,7 @@ export default function Form() {
           </div>
           <button
             type="submit"
-            className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl"
+            className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
           >
             Skicka
           </button>
