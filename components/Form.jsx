@@ -42,7 +42,7 @@ export default function Form() {
     if (formSubmitted) {
       const timer = setTimeout(() => {
         setFormSubmitted(false);
-      }, 12000);
+      }, 8000);
 
       return () => clearTimeout(timer);
     }
