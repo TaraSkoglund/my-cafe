@@ -1,12 +1,20 @@
 "use client";
 import { Bars3Icon } from "@heroicons/react/24/outline";
+import { ShoppingBag } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 export default function Header() {
   const [activeLink, setActiveLink] = useState("");
   return (
     <header className="fixed bg-opacity-70 backdrop-blur-md z-10 w-screen bg-white top-0 left-0">
       <div className="flex justify-between items-center mx-12 my-4 font-serif">
-        <div>My-Cafe</div>
+        <button
+          className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
+            activeLink === "start" ? "border-b-2" : ""
+          }`}
+        >
+          <a href="/">My-Cafe</a>
+        </button>
         <nav className="md:block hidden">
           <ul className="flex space-x-6">
             <li
@@ -35,6 +43,15 @@ export default function Header() {
               <a href="#contact" onClick={() => setActiveLink("contact")}>
                 Kontakta Oss
               </a>
+            </li>
+            <li
+              className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
+                activeLink === "cart" ? "border-b-2" : ""
+              }`}
+            >
+              <Link href={"/cartoverview"}>
+                <ShoppingBag />
+              </Link>
             </li>
           </ul>
         </nav>

@@ -9,7 +9,7 @@ export default function Page({ params }) {
   )[0];
 
   return (
-    <section>
+    <section className="pt-16">
       <div className="grid md:grid-cols-1 xl:grid-cols-2">
         <div>
           <div className="mx-12 my-6 font-serif">

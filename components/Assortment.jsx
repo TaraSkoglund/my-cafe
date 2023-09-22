@@ -21,7 +21,7 @@ export default function Assortment() {
   };
 
   return (
-    <section className="font-serif mt-12">
+    <section className="font-serif mt-20">
       <h1 className="text-2xl">Sortiment</h1>
       <div className="flex flex-col md:flex-row my-12 gap-2">
         <button
