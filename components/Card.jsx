@@ -10,6 +10,7 @@ export default function Card({ title, price, img }) {
           height={500}
           alt={title}
           className="h-96 object-cover "
+          priority={false}
         />
       </div>
       <div className="flex justify-between p-3">
