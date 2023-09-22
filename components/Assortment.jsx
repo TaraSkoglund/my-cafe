@@ -6,6 +6,7 @@ import Card from "./Card";
 
 export default function Assortment() {
   const [filteredProducts, setFilteredProducts] = useState(MOCK_PRODUCTS);
+  const [activeFilter, setActiveFilter] = useState("Alla");
 
   const handleFilter = (productType) => {
     if (productType === "Alla") {
@@ -16,6 +17,7 @@ export default function Assortment() {
       );
       setFilteredProducts(newArr);
     }
+    setActiveFilter(productType);
   };
 
   return (
@@ -23,25 +25,33 @@ export default function Assortment() {
       <h1 className="text-2xl">Sortiment</h1>
       <div className="flex flex-col md:flex-row my-12 gap-2">
         <button
-          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
+          className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
+            activeFilter === "Bulle" ? "border-b-2" : ""
+          }`}
           onClick={() => handleFilter("Bulle")}
         >
           Bullar
         </button>
         <button
-          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
+          className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
+            activeFilter === "Tårta" ? "border-b-2" : ""
+          }`}
           onClick={() => handleFilter("Tårta")}
         >
           Tårtor
         </button>
         <button
-          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
+          className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
+            activeFilter === "Kaka" ? "border-b-2" : ""
+          }`}
           onClick={() => handleFilter("Kaka")}
         >
           Kakor
         </button>
         <button
-          className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
+          className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
+            activeFilter === "Alla" ? "border-b-2" : ""
+          }`}
           onClick={() => handleFilter("Alla")}
         >
           Alla

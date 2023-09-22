@@ -1,28 +1,6 @@
 "use client";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { useEffect } from "react";
 export default function Header() {
-  useEffect(() => {
-    const scrollLinks = document.querySelectorAll(".scroll-link");
-
-    scrollLinks.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        const targetId = link.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-          const offsetTop = targetElement.offsetTop;
-
-          window.scrollTo({
-            top: offsetTop,
-            behavior: "smooth",
-          });
-        }
-      });
-    });
-  }, []);
   return (
     <header className="fixed bg-opacity-70 backdrop-blur-md z-10 w-screen bg-white top-0 left-0">
       <div className="flex justify-between items-center mx-12 my-4 font-serif">
