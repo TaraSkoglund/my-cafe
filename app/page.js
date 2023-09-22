@@ -14,7 +14,7 @@ export default function Home() {
             width={500}
             height={500}
             alt="Hero Imge"
-            className="object-cover w-screen max-h-xl "
+            className="object-cover w-screen max-h-screen"
           />
           <div className="absolute text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-serif w-full">
             <Link href="/">
