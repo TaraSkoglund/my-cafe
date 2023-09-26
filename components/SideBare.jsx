@@ -6,7 +6,7 @@ export default function SideBare({ isCartOpen }) {
   const [activeLink, setActiveLink] = useState("");
   return (
     <section
-      className={`fixed mt-20 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md w-80 h-screen bg-white-500 font-serif flex flex-col z-50 ${
+      className={`fixed mt-16 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md w-80 h-screen bg-white font-serif flex flex-col z-50 ${
         isCartOpen ? "block" : "hidden"
       }`}
     >
