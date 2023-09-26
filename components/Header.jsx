@@ -1,12 +1,14 @@
 "use client";
+import SideBare from "@/components/SideBare";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { ShoppingBag } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 export default function Header() {
   const [activeLink, setActiveLink] = useState("");
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
   return (
-    <header className="fixed bg-opacity-70 backdrop-blur-md z-10 w-screen bg-white top-0 left-0">
+    <header className="fixed bg-opacity-70 backdrop-blur-md z-20 w-screen bg-white top-0 left-0">
       <div className="flex justify-between items-center mx-12 my-4 font-serif">
         <button
           className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
@@ -49,9 +51,10 @@ export default function Header() {
                 activeLink === "cart" ? "border-b-2" : ""
               }`}
             >
-              <Link href={"/cartoverview"}>
+              <button onClick={() => setIsCartOpen(!isCartOpen)}>
                 <ShoppingBag />
-              </Link>
+              </button>
+              <SideBare isCartOpen={isCartOpen} />
             </li>
           </ul>
         </nav>

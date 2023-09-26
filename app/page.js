@@ -1,14 +1,13 @@
 import About from "@/components/About";
 import Assortment from "@/components/Assortment";
 import Form from "@/components/Form";
-import SideBare from "@/components/SideBare";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main>
       <div>
-        <section className="relative">
+        <section className="relative z-10">
           <Image
             src="/assets/tårta1-bred.jpeg"
             width={500}
@@ -39,7 +38,6 @@ export default function Home() {
             <h3>031 55 876</h3>
           </div>
         </footer>
-        <SideBare className="relative h-screen w-80" />
       </div>
     </main>
   );

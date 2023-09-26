@@ -2,13 +2,17 @@
 import { MinusCircle, PlusCircle } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-export default function SideBare() {
+export default function SideBare({ isCartOpen }) {
   const [activeLink, setActiveLink] = useState("");
   return (
-    <section className="absolute inset-y-0 right-0 w-80 bg-white mt-16 font-serif flex flex-col">
+    <section
+      className={`fixed mt-20 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md w-80 h-screen bg-white-500 font-serif flex flex-col z-50 ${
+        isCartOpen ? "block" : "hidden"
+      }`}
+    >
       <h1 className="m-3 gap-3">I Korgen</h1>
       <div className="flex justify-start gap-2 m-3">
-        <div className="w-36 ">
+        <div className="w-32 object-cover ">
           <Image
             src="/assets/tårta1-bred.jpeg"
             width={500}
