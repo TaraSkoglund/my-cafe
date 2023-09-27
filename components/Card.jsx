@@ -17,6 +17,16 @@ export default function Card({ title, price, img }) {
         <p>{title}</p>
         <p>{price} kr</p>
       </div>
+      <div>
+        <button
+          className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
+            activeLink === "Beställ" ? "border-b-2" : ""
+          }`}
+          onClick={() => setActiveLink("Beställ")}
+        >
+          Beställ
+        </button>
+      </div>
     </section>
   );
 }
