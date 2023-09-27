@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Card({ title, price, img }) {
+  const [activeLink, setActiveLink] = useState("");
   return (
     <section className="flex w-72 flex-col border rounded-sm border-black hover:shadow-2xl">
       <div className="">
@@ -13,13 +15,13 @@ export default function Card({ title, price, img }) {
           priority={false}
         />
       </div>
-      <div className="flex justify-between p-3">
+      <div className="flex justify-between p-2">
         <p>{title}</p>
         <p>{price} kr</p>
       </div>
-      <div>
+      <div className="flex m-2">
         <button
-          className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
+          className={`py-1 border w-full rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
             activeLink === "Beställ" ? "border-b-2" : ""
           }`}
           onClick={() => setActiveLink("Beställ")}
