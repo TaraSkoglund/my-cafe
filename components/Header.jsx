@@ -1,23 +1,23 @@
-'use client'
-import SideBare from '@/components/SideBare'
-import { Bars3Icon } from '@heroicons/react/24/outline'
-import { ShoppingBag } from 'lucide-react'
-import { useState } from 'react'
+"use client";
+import SideBare from "@/components/SideBare";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { ShoppingBag } from "lucide-react";
+import { useState } from "react";
 export default function Header() {
-  const [activeLink, setActiveLink] = useState('')
-  const [isCartOpen, setIsCartOpen] = useState(false)
+  const [activeLink, setActiveLink] = useState("");
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handelIsCartOpen = () => {
-    setIsCartOpen(!isCartOpen)
-    console.log(isCartOpen)
-  }
+    setIsCartOpen(!isCartOpen);
+    console.log(isCartOpen);
+  };
 
   return (
-    <header className="fixed bg-opacity-70 backdrop-blur-md z-20 w-screen bg-white top-0 left-0">
-      <div className="flex justify-between items-center mx-12 my-4 font-serif">
+    <header className="fixed bg-opacity-70 backdrop-blur-md z-20 w-screen h-14 bg-white top-0 left-0">
+      <div className="flex justify-between items-center mx-12 my-3 font-serif">
         <button
           className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
-            activeLink === 'start' ? 'border-b-2' : ''
+            activeLink === "start" ? "border-b-2" : ""
           }`}
         >
           <a href="/">My-Cafe</a>
@@ -26,40 +26,40 @@ export default function Header() {
           <ul className="flex space-x-6">
             <li
               className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
-                activeLink === 'assortment' ? 'border-b-2' : ''
+                activeLink === "assortment" ? "border-b-2" : ""
               }`}
             >
-              <a href="#assortment" onClick={() => setActiveLink('assortment')}>
+              <a href="#assortment" onClick={() => setActiveLink("assortment")}>
                 Vårt Sortiment
               </a>
             </li>
             <li
               className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
-                activeLink === 'about' ? 'border-b-2' : ''
+                activeLink === "about" ? "border-b-2" : ""
               }`}
             >
-              <a href="#about" onClick={() => setActiveLink('about')}>
+              <a href="#about" onClick={() => setActiveLink("about")}>
                 Om Oss
               </a>
             </li>
             <li
               className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
-                activeLink === 'contact' ? 'border-b-2' : ''
+                activeLink === "contact" ? "border-b-2" : ""
               }`}
             >
-              <a href="#contact" onClick={() => setActiveLink('contact')}>
+              <a href="#contact" onClick={() => setActiveLink("contact")}>
                 Kontakta Oss
               </a>
             </li>
             <li
               className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
-                activeLink === 'cart' ? 'border-b-2' : ''
+                activeLink === "cart" ? "border-b-2" : ""
               }`}
             >
               <button onClick={handelIsCartOpen}>
                 <ShoppingBag />
               </button>
-              <div className={isCartOpen ? 'block' : 'hidden'}>
+              <div className={isCartOpen ? "block" : "hidden"}>
                 <SideBare />
               </div>
             </li>
@@ -70,5 +70,5 @@ export default function Header() {
         </button>
       </div>
     </header>
-  )
+  );
 }
