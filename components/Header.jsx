@@ -2,27 +2,15 @@
 import SideBare from "@/components/SideBare";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { ShoppingBag } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 export default function Header() {
   const [activeLink, setActiveLink] = useState("");
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const sidebarRef = useRef(null);
 
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        setIsCartOpen(false);
-      }
-    };
-
-    if (isCartOpen) {
-      document.addEventListener("click", handleOutsideClick);
-    }
-
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [isCartOpen]);
+  const handelIsCartOpen = () => {
+    setIsCartOpen(!isCartOpen);
+    console.log(isCartOpen);
+  };
 
   return (
     <header className="fixed bg-opacity-70 backdrop-blur-md z-20 w-screen bg-white top-0 left-0">
@@ -68,12 +56,12 @@ export default function Header() {
                 activeLink === "cart" ? "border-b-2" : ""
               }`}
             >
-              <button onClick={() => setIsCartOpen(!isCartOpen)}>
+              <button onClick={handelIsCartOpen}>
                 <ShoppingBag />
               </button>
-              <div ref={sidebarRef}>
-                <SideBare isCartOpen={isCartOpen} />
-              </div>
+              <SideBare className="hidden" />
+              {/* <SideBare className={isCartOpen ? "block" : "hidden"} /> */}
+              {/* // <div className={isCartOpen ? <SideBare /> : ""}></div> */}
             </li>
           </ul>
         </nav>
