@@ -1,4 +1,5 @@
-import { createContext, useContext } from "react";
+"use client";
+import { createContext, useContext, useState } from "react";
 
 export const CartContext = createContext();
 
