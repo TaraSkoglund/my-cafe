@@ -1,9 +1,10 @@
 "use client";
-import { MinusCircle, PlusCircle } from "lucide-react";
+import { MinusCircle, PlusCircle, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 export default function SideBare() {
   const [activeLink, setActiveLink] = useState("");
+  // const { cartItems, removeFromCart } = useCart(id);
   return (
     <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md w-80 h-screen bg-white font-serif flex flex-col z-50">
       <h1 className="m-3 gap-3 text-xl">Varukorgen</h1>
@@ -18,10 +19,10 @@ export default function SideBare() {
           />
         </div>
         <div className="text-md">
-          <p className="pb-2">Hallongrottor</p>
-          <div className="flex flex-col justify-between">
+          <p>Hallongrottor</p>
+          <div className="flex flex-col justify-between gap-2">
             <p className="pb-2">136 kr</p>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 pb-1">
               <button>
                 <PlusCircle />
               </button>
@@ -30,12 +31,18 @@ export default function SideBare() {
                 <MinusCircle />
               </button>
             </div>
+            <Trash2 />
           </div>
         </div>
       </div>
+      {/* {cartItems.map((item) => (
+        <div key={item.id} className="flex justify-start gap-2 m-3">
+          { läg till ta bort knapp och product detaljer  }
+        </div>
+      ))} */}
       <div className="m-3 flex justify-center flex-col">
         <div>
-          <p>Totalt: 136 kr</p>
+          <p>Totalt: {/*calculateTotalPrice(cartItems)*/} kr</p>
         </div>
         <button
           className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
