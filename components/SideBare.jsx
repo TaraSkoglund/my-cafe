@@ -6,15 +6,15 @@ export default function SideBare() {
   const [activeLink, setActiveLink] = useState("");
   return (
     <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md w-80 h-screen bg-white font-serif flex flex-col z-50">
-      <h1 className="m-3 gap-3">I Korgen</h1>
+      <h1 className="m-3 gap-3 text-xl">Varukorgen</h1>
       <div className="flex justify-start gap-2 m-3">
-        <div className="w-32 object-cover ">
+        <div>
           <Image
-            src="/assets/tårta1-bred.jpeg"
+            src="/assets/tårta3.jpeg"
             width={500}
             height={500}
             alt="Hero Imge"
-            className="object-cover bg-cover bg-center"
+            className="object-cover bg-cover bg-center w-32 h-40 object-cover"
           />
         </div>
         <div className="text-md">
@@ -43,7 +43,7 @@ export default function SideBare() {
           }`}
           onClick={() => setActiveLink("Beställ")}
         >
-          Beställ
+          Till Kassan
         </button>
       </div>
     </section>

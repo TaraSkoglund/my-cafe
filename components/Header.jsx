@@ -19,7 +19,7 @@ export default function Header() {
     <header className="fixed bg-opacity-70 backdrop-blur-md z-20 w-screen h-14 bg-white top-0 left-0">
       <div className="flex justify-between items-center mx-12 my-3 font-serif">
         <button
-          className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
+          className={`hover:shadow-2xl hover:border-b-2 border-current p-1 z-30 ${
             activeLink === "start" ? "border-b-2" : ""
           }`}
         >
@@ -68,17 +68,46 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <button className="hover:bg-slate-200 p-1 block md:hidden z-30">
-          {nav ? <X className="h-8 w-8 " /> : <Menu className="h-8 w-8 " />}
-        </button>
+        <nav className="z-30 md:hidden">
+          <ul className="flex gap-3">
+            <li
+              className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
+                activeLink === "menue" ? "border-b-2" : ""
+              }`}
+            >
+              <button onClick={handleNav}>
+                {nav ? (
+                  <X className="h-6 w-6 hover:shadow-2xl hover:border-b-black-2" />
+                ) : (
+                  <Menu className="h-6 w-6 hover:shadow-2xl hover:border-b-black-2" />
+                )}
+              </button>
+            </li>
+            <li
+              className={`hover:shadow-2xl hover:border-b-2 border-current p-1 ${
+                activeLink === "cart" ? "border-b-2" : ""
+              }`}
+            >
+              <button onClick={handleIsCartOpen}>
+                <ShoppingBag className="h-6 w-6" />
+              </button>
+              <div className={isCartOpen ? "block" : "hidden"}>
+                <SideBare />
+              </div>
+            </li>
+          </ul>
+        </nav>
         <nav
           className={
             nav
-              ? "md:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-opacity-70 backdrop-blur-md bg-white ease-in duration-300"
-              : "md:hidden absolute top-0 left-0 right-[-100%] bottom-0 flex justify-center items-center w-full h-screen bg-opacity-70 backdrop-blur-md bg-white ease-in duration-300"
+              ? "md:hidden absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center w-full h-screen bg-opacity-70 backdrop-blur-md bg-white ease-in duration-300"
+              : "md:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex flex-col justify-center items-center w-full h-screen bg-opacity-70 backdrop-blur-md bg-white ease-in duration-300"
           }
         >
-          <ul className="flex flex-col justify-center items-center">
+          <ul
+            className="flex flex-col justify-center items-center"
+            onClick={handleNav}
+          >
             <li
               className={`hover:shadow-2xl hover:border-b-2 border-current p-1 m-4 text-2xl${
                 activeLink === "assortment" ? "border-b-2" : ""
@@ -122,14 +151,7 @@ export default function Header() {
               className={`hover:shadow-2xl hover:border-b-2 border-current p-1 m-4 text-2xl${
                 activeLink === "cart" ? "border-b-2" : ""
               }`}
-            >
-              <button onClick={handleIsCartOpen}>
-                <ShoppingBag />
-              </button>
-              <div className={isCartOpen ? "block" : "hidden"}>
-                <SideBare />
-              </div>
-            </li>
+            ></li>
           </ul>
         </nav>
       </div>
