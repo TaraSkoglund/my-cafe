@@ -3,10 +3,14 @@ import { useCart } from "@/components/CartContext";
 import { MOCK_PRODUCTS } from "@/constants";
 import Image from "next/image";
 export default function Page({ params }) {
-  const { addToCart, cartItems } = useCart();
+  const { addToCart, cartItems, products } = useCart();
   const product = MOCK_PRODUCTS.filter(
     (product) => product.href.slice(1) === params.name
   )[0];
+
+  // const product = products.find(
+  //   (product) => product.href.slice(1) === params.name
+  // );
 
   const handleAddToCart = () => {
     addToCart(product);

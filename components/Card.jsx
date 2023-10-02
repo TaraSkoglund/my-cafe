@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import { useCart } from "./CartContext";
 
 export default function Card({ title, price, img, product }) {
-  const [activeLink, setActiveLink] = useState("");
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
@@ -28,9 +26,7 @@ export default function Card({ title, price, img, product }) {
       </div>
       <div className="flex m-2">
         <button
-          className={`py-1 border w-full rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
-            activeLink === "Beställ" ? "border-b-2" : ""
-          }`}
+          className="py-1 border w-full rounded-sm border-black hover:shadow-2xl hover:border-b-2"
           onClick={handleAddToCart}
         >
           Beställ
