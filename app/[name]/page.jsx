@@ -2,20 +2,17 @@
 import { useCart } from "@/components/CartContext";
 import { MOCK_PRODUCTS } from "@/constants";
 import Image from "next/image";
-import { useState } from "react";
 export default function Page({ params }) {
-  const [activeLink, setActiveLink] = useState("");
   const { addToCart, cartItems } = useCart();
   const product = MOCK_PRODUCTS.filter(
     (product) => product.href.slice(1) === params.name
   )[0];
 
-  const handleAddToCart = (product) => {
-    console.log("hej");
-    // console.log("product1", product);
-    // addToCart(product);
+  const handleAddToCart = () => {
+    addToCart(product);
+    console.log("product1", product);
   };
-  // console.log("Varukorg", cartItems);
+
   return (
     <section className="pt-16">
       <div className="grid md:grid-cols-1 xl:grid-cols-2">

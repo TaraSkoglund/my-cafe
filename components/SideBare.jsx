@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 export default function SideBare() {
   const [activeLink, setActiveLink] = useState("");
-  // const { cartItems, removeFromCart } = useCart(id);
+  // const { cartItems, removeFromCart } = useCart();
+
   return (
     <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md w-80 h-screen bg-white font-serif flex flex-col z-50">
       <h1 className="m-3 gap-3 text-xl">Varukorgen</h1>
