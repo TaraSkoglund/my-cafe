@@ -1,13 +1,21 @@
 "use client";
+import { useCart } from "@/components/CartContext";
 import { MOCK_PRODUCTS } from "@/constants";
 import Image from "next/image";
 import { useState } from "react";
 export default function Page({ params }) {
   const [activeLink, setActiveLink] = useState("");
+  const { addToCart, cartItems } = useCart();
   const product = MOCK_PRODUCTS.filter(
     (product) => product.href.slice(1) === params.name
   )[0];
 
+  const handleAddToCart = (product) => {
+    console.log("hej");
+    // console.log("product1", product);
+    // addToCart(product);
+  };
+  // console.log("Varukorg", cartItems);
   return (
     <section className="pt-16">
       <div className="grid md:grid-cols-1 xl:grid-cols-2">
@@ -31,10 +39,8 @@ export default function Page({ params }) {
           </div>
           <div className="flex mx-12 font-serif justify-between">
             <button
-              className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
-                activeLink === "Beställ" ? "border-b-2" : ""
-              }`}
-              onClick={() => setActiveLink("Beställ")}
+              className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
+              onClick={handleAddToCart}
             >
               Beställ
             </button>
