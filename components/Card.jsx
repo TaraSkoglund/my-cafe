@@ -1,25 +1,29 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useCart } from "./CartContext";
 
 export default function Card({ title, price, img, product }) {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
+    console.log("product", product);
     addToCart(product);
   };
   return (
     <section className="flex w-72 flex-col border rounded-sm border-black hover:shadow-2xl">
-      <div className="">
-        <Image
-          src={img}
-          width={500}
-          height={500}
-          alt={title}
-          className="h-96 object-cover "
-          priority={false}
-        />
-      </div>
+      <Link href={product.href}>
+        <div className="">
+          <Image
+            src={img}
+            width={500}
+            height={500}
+            alt={title}
+            className="h-96 object-cover "
+            priority={false}
+          />
+        </div>
+      </Link>
       <div className="flex justify-between p-2">
         <p>{title}</p>
         <p>{price} kr</p>
