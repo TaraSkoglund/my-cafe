@@ -5,7 +5,37 @@ import Image from "next/image";
 import { useState } from "react";
 export default function SideBare() {
   const [activeLink, setActiveLink] = useState("");
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart, updateCartItems } = useCart();
+
+  const incrementCount = (item) => {
+    const updatedCart = cartItems.map((cartItem) => {
+      if (cartItem.id === item.id) {
+        return {
+          ...cartItem,
+          count: cartItem.count + 1,
+        };
+      }
+      return cartItem;
+    });
+    updateCartItems(updatedCart);
+  };
+
+  const decrementCount = (item) => {
+    if (item.count === 1) {
+      removeFromCart(item.id);
+    } else {
+      const updatedCart = cartItems.map((cartItem) => {
+        if (cartItem.id === item.id) {
+          return {
+            ...cartItem,
+            count: cartItem.count - 1,
+          };
+        }
+        return cartItem;
+      });
+      updateCartItems(updatedCart);
+    }
+  };
 
   return (
     <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md w-80 h-screen bg-white font-serif flex flex-col z-50">
@@ -26,11 +56,11 @@ export default function SideBare() {
             <div className="flex flex-col justify-between gap-2">
               <p className="pb-2">{item.price} kr</p>
               <div className="flex items-center gap-2 pb-1">
-                <button>
+                <button onClick={() => incrementCount(item)}>
                   <PlusCircle />
                 </button>
-                <p>1</p>
-                <button>
+                <p>{item.count}</p>
+                <button onClick={() => decrementCount(item)}>
                   <MinusCircle />
                 </button>
               </div>

@@ -8,10 +8,6 @@ export default function Page({ params }) {
     (product) => product.href.slice(1) === params.name
   )[0];
 
-  // const product = products.find(
-  //   (product) => product.href.slice(1) === params.name
-  // );
-
   const handleAddToCart = () => {
     addToCart(product);
     console.log("product1", product);

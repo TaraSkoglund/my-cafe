@@ -10,21 +10,25 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  const updateCartItems = (updatedItems) => {
+    setCartItems(updatedItems);
+  };
+
   const addToCart = (product) => {
-    console.log("product", product);
-    setCartItems([...cartItems, product]);
-    console.log("cartItems", cartItems);
+    const updatedCart = [...cartItems, { ...product, count: 1 }];
+    updateCartItems(updatedCart);
   };
 
   const removeFromCart = (productId) => {
     const updatedCart = cartItems.filter((item) => item.id !== productId);
-    setCartItems(updatedCart);
+    updateCartItems(updatedCart);
   };
 
   const contextValue = {
     cartItems,
     addToCart,
     removeFromCart,
+    updateCartItems,
   };
 
   return (
