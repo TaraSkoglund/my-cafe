@@ -8,10 +8,16 @@ export default function Header() {
   const [nav, setNav] = useState(false);
 
   const handleIsCartOpen = () => {
+    if (nav) {
+      setNav(false);
+    }
     setIsCartOpen(!isCartOpen);
   };
 
   const handleNav = () => {
+    if (isCartOpen) {
+      setIsCartOpen(false);
+    }
     setNav(!nav);
   };
 
@@ -63,7 +69,7 @@ export default function Header() {
                 <ShoppingBag />
               </button>
               <div className={isCartOpen ? "block" : "hidden"}>
-                <SideBare />
+                <SideBare isOpen={isCartOpen} />
               </div>
             </li>
           </ul>
@@ -92,7 +98,7 @@ export default function Header() {
                 <ShoppingBag className="h-6 w-6" />
               </button>
               <div className={isCartOpen ? "block" : "hidden"}>
-                <SideBare />
+                <SideBare isOpen={isCartOpen} />
               </div>
             </li>
           </ul>
