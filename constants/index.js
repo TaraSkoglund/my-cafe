@@ -1,6 +1,7 @@
 export const MOCK_PRODUCTS = [
   {
     id: 1,
+    count: 0,
     typ: "Kaka",
     title: "Hallongrottor",
     href: "/hallongrottor",
@@ -19,6 +20,7 @@ export const MOCK_PRODUCTS = [
   },
   {
     id: 2,
+    count: 0,
     typ: "Bulle",
     title: "Wienerbulle",
     href: "/wienerbulle",
@@ -40,6 +42,7 @@ export const MOCK_PRODUCTS = [
   },
   {
     id: 3,
+    count: 0,
     typ: "Bulle",
     title: "Croissant",
     href: "/croissant",
@@ -59,6 +62,7 @@ export const MOCK_PRODUCTS = [
   },
   {
     id: 4,
+    count: 0,
     typ: "Tårta",
     title: "Drottningtårta",
     href: "/drottningtarta",
@@ -79,6 +83,7 @@ export const MOCK_PRODUCTS = [
   },
   {
     id: 5,
+    count: 0,
     typ: "Kaka",
     title: "Kardemummakaka",
     href: "/kardemummakaka",
@@ -101,6 +106,7 @@ export const MOCK_PRODUCTS = [
   },
   {
     id: 6,
+    count: 0,
     typ: "Tårta",
     title: "Björnbär o timjan tårta",
     href: "/bjornbarlimetimjan",

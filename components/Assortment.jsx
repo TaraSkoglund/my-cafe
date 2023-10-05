@@ -1,6 +1,5 @@
 "use client";
 import { MOCK_PRODUCTS } from "@/constants";
-import Link from "next/link";
 import { useState } from "react";
 import Card from "./Card";
 
@@ -60,17 +59,16 @@ export default function Assortment() {
       <ul className="grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4 hover:border-b-2">
         {filteredProducts.map((product) => (
           <li key={product.id}>
-            <Link href={product.href}>
-              <Card
-                id={product.id}
-                typ={product.typ}
-                title={product.title}
-                img={product.img}
-                ingredients={product.ingredients}
-                price={product.price}
-                description={product.description}
-              />
-            </Link>
+            <Card
+              id={product.id}
+              typ={product.typ}
+              title={product.title}
+              img={product.img}
+              ingredients={product.ingredients}
+              price={product.price}
+              description={product.description}
+              product={product}
+            />
           </li>
         ))}
       </ul>

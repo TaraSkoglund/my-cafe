@@ -1,3 +1,4 @@
+import { CartProvider } from "@/components/CartContext";
 import Header from "@/components/Header";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -13,8 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="w-screen min-h-screen bg-white">
-        <Header />
-        <main className={`${inter.className}`}>{children}</main>
+        <CartProvider>
+          <Header />
+          <main className={`${inter.className}`}>{children}</main>
+        </CartProvider>
       </body>
     </html>
   );

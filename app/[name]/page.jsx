@@ -1,12 +1,17 @@
 "use client";
+import { useCart } from "@/components/CartContext";
 import { MOCK_PRODUCTS } from "@/constants";
 import Image from "next/image";
-import { useState } from "react";
 export default function Page({ params }) {
-  const [activeLink, setActiveLink] = useState("");
+  const { addToCart, cartItems, products } = useCart();
   const product = MOCK_PRODUCTS.filter(
     (product) => product.href.slice(1) === params.name
   )[0];
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    console.log("product1", product);
+  };
 
   return (
     <section className="pt-16">
@@ -31,10 +36,8 @@ export default function Page({ params }) {
           </div>
           <div className="flex mx-12 font-serif justify-between">
             <button
-              className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
-                activeLink === "Beställ" ? "border-b-2" : ""
-              }`}
-              onClick={() => setActiveLink("Beställ")}
+              className="py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2"
+              onClick={handleAddToCart}
             >
               Beställ
             </button>
