@@ -15,8 +15,23 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (product) => {
-    const updatedCart = [...cartItems, { ...product, count: 1 }];
-    updateCartItems(updatedCart);
+    const existingCartItem = cartItems.find((item) => item.id === product.id);
+
+    if (existingCartItem) {
+      const updatedCart = cartItems.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            count: item.count + 1,
+          };
+        }
+        return item;
+      });
+
+      setCartItems(updatedCart);
+    } else {
+      setCartItems([...cartItems, { ...product, count: 1 }]);
+    }
   };
 
   const removeFromCart = (productId) => {
