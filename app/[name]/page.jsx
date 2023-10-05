@@ -1,5 +1,5 @@
 "use client";
-import { useCart } from "@/components/CartContext";
+import { useCart } from "@/app/Context/CartContext";
 import { MOCK_PRODUCTS } from "@/constants";
 import Image from "next/image";
 export default function Page({ params }) {
