@@ -5,45 +5,14 @@ import Image from "next/image";
 import { useState } from "react";
 export default function SideBare() {
   const [activeLink, setActiveLink] = useState("");
-  const { cartItems, removeFromCart, updateCartItems } = useCart();
-
-  const incrementCount = (item) => {
-    const updatedCart = cartItems.map((cartItem) => {
-      if (cartItem.id === item.id) {
-        return {
-          ...cartItem,
-          count: cartItem.count + 1,
-        };
-      }
-      return cartItem;
-    });
-    updateCartItems(updatedCart);
-  };
-
-  const decrementCount = (item) => {
-    if (item.count === 1) {
-      removeFromCart(item.id);
-    } else {
-      const updatedCart = cartItems.map((cartItem) => {
-        if (cartItem.id === item.id) {
-          return {
-            ...cartItem,
-            count: cartItem.count - 1,
-          };
-        }
-        return cartItem;
-      });
-      updateCartItems(updatedCart);
-    }
-  };
-
-  const calculateTotalPrice = () => {
-    let totalPrice = 0;
-    cartItems.forEach((item) => {
-      totalPrice += item.price * item.count;
-    });
-    return totalPrice;
-  };
+  const {
+    cartItems,
+    removeFromCart,
+    updateCartItems,
+    incrementCount,
+    decrementCount,
+    calculateTotalPrice,
+  } = useCart();
 
   return (
     <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md sm:w-80 w-screen h-screen bg-white font-serif flex flex-col z-50">

@@ -10,6 +10,44 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  const incrementCount = (item) => {
+    const updatedCart = cartItems.map((cartItem) => {
+      if (cartItem.id === item.id) {
+        return {
+          ...cartItem,
+          count: cartItem.count + 1,
+        };
+      }
+      return cartItem;
+    });
+    updateCartItems(updatedCart);
+  };
+
+  const decrementCount = (item) => {
+    if (item.count === 1) {
+      removeFromCart(item.id);
+    } else {
+      const updatedCart = cartItems.map((cartItem) => {
+        if (cartItem.id === item.id) {
+          return {
+            ...cartItem,
+            count: cartItem.count - 1,
+          };
+        }
+        return cartItem;
+      });
+      updateCartItems(updatedCart);
+    }
+  };
+
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    cartItems.forEach((item) => {
+      totalPrice += item.price * item.count;
+    });
+    return totalPrice;
+  };
+
   const updateCartItems = (updatedItems) => {
     setCartItems(updatedItems);
   };
@@ -43,7 +81,9 @@ export const CartProvider = ({ children }) => {
     cartItems,
     addToCart,
     removeFromCart,
-    updateCartItems,
+    incrementCount,
+    decrementCount,
+    calculateTotalPrice,
   };
 
   return (
