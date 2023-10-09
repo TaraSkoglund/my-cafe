@@ -24,20 +24,18 @@ export const CartProvider = ({ children }) => {
   };
 
   const decrementCount = (item) => {
-    if (item.count === 1) {
-      removeFromCart(item.id);
-    } else {
-      const updatedCart = cartItems.map((cartItem) => {
-        if (cartItem.id === item.id) {
-          return {
-            ...cartItem,
-            count: cartItem.count - 1,
-          };
-        }
-        return cartItem;
-      });
-      updateCartItems(updatedCart);
-    }
+    const updatedCart = cartItems.map((cartItem) => {
+      if (cartItem.id === item.id) {
+        const newCount = Math.max(cartItem.count - 1, 1);
+
+        return {
+          ...cartItem,
+          count: newCount,
+        };
+      }
+      return cartItem;
+    });
+    updateCartItems(updatedCart);
   };
 
   const calculateTotalPrice = () => {
