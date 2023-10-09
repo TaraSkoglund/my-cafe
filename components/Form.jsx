@@ -49,13 +49,9 @@ export default function Form() {
   }, [formSubmitted]);
 
   return (
-    <section className="m-12 font-serif">
+    <section className="font-serif w-full mt-12">
       <h1 className="text-2xl py-6">Kontakta oss</h1>
-      <form
-        action="#"
-        className="px-4 max-w-4xl"
-        onSubmit={formik.handleSubmit}
-      >
+      <form action="#" onSubmit={formik.handleSubmit}>
         <div className="flex flex-wrap md:flex-nowrap gap-6 mb-6">
           <div className="flex flex-col w-full">
             <input

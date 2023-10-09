@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <section className="m-12 font-serif">
+    <section className="mt-12">
       <h1 className="text-2xl py-6">Om Oss</h1>
-      <p className="px-4 text-sm">
+      <p className="text-sm">
         My Cafe är ett familjeägt hantverksbageri och konditori som funnits i
         Göteborgsområdet sedan starten 1962. Allt startade i familjen Olssons
         källare i Mölndal och har nu expanderat till fem butiker runt om i

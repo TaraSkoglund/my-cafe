@@ -1,4 +1,5 @@
 "use client";
+import { useCart } from "@/app/Context/CartContext";
 import SideBare from "@/components/SideBare";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { useState } from "react";
@@ -6,6 +7,7 @@ export default function Header() {
   const [activeLink, setActiveLink] = useState("");
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [nav, setNav] = useState(false);
+  const { totalItemCount } = useCart();
 
   const handleIsCartOpen = () => {
     if (nav) {
@@ -65,8 +67,13 @@ export default function Header() {
                 activeLink === "cart" ? "border-b-2" : ""
               }`}
             >
-              <button onClick={handleIsCartOpen}>
+              <button className="relative" onClick={handleIsCartOpen}>
                 <ShoppingBag />
+                {totalItemCount > 0 && (
+                  <span className="absolute top-[-10px] right-[-10px] bg-black text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
+                    {totalItemCount}
+                  </span>
+                )}
               </button>
               <div className={isCartOpen ? "block" : "hidden"}>
                 <SideBare isOpen={isCartOpen} />
@@ -94,8 +101,13 @@ export default function Header() {
                 activeLink === "cart" ? "border-b-2" : ""
               }`}
             >
-              <button onClick={handleIsCartOpen}>
+              <button className="relative" onClick={handleIsCartOpen}>
                 <ShoppingBag className="h-6 w-6" />
+                {totalItemCount > 0 && (
+                  <span className="absolute top-[-10px] right-[-10px] bg-black text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
+                    {totalItemCount}
+                  </span>
+                )}
               </button>
               <div className={isCartOpen ? "block" : "hidden"}>
                 <SideBare isOpen={isCartOpen} />
