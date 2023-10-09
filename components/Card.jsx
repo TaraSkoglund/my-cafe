@@ -1,13 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "./CartContext";
+import { useCart } from "../app/Context/CartContext";
 
 export default function Card({ title, price, img, product }) {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    console.log("product", product);
     addToCart(product);
   };
   return (

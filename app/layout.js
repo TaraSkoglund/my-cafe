@@ -1,4 +1,4 @@
-import { CartProvider } from "@/components/CartContext";
+import { CartProvider } from "@/app/Context/CartContext";
 import Header from "@/components/Header";
 import { Inter } from "next/font/google";
 import "./globals.css";

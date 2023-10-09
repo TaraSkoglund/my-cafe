@@ -1,5 +1,5 @@
 "use client";
-import { useCart } from "@/components/CartContext";
+import { useCart } from "@/app/Context/CartContext";
 import { MinusCircle, PlusCircle, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -37,8 +37,16 @@ export default function SideBare() {
     }
   };
 
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    cartItems.forEach((item) => {
+      totalPrice += item.price * item.count;
+    });
+    return totalPrice;
+  };
+
   return (
-    <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md w-80 h-screen bg-white font-serif flex flex-col z-50">
+    <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md sm:w-80 w-screen h-screen bg-white font-serif flex flex-col z-50">
       <h1 className="m-3 gap-3 text-xl">Varukorgen</h1>
       {cartItems.map((item) => (
         <div key={item.id} className="flex justify-start gap-2 m-3">
@@ -74,7 +82,7 @@ export default function SideBare() {
 
       <div className="m-3 flex justify-center flex-col">
         <div>
-          <p>Totalt: {/*calculateTotalPrice(cartItems)*/} kr</p>
+          <p>Totalt: {calculateTotalPrice()} kr</p>
         </div>
         <button
           className={`py-1 px-6 border rounded-sm border-black hover:shadow-2xl hover:border-b-2 ${
