@@ -56,7 +56,7 @@ export default function Assortment() {
           Alla
         </button>
       </div>
-      <ul className="grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4 hover:border-b-2">
+      <ul className="grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4">
         {filteredProducts.map((product) => (
           <li key={product.id}>
             <Card

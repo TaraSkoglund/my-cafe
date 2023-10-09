@@ -8,14 +8,13 @@ export default function SideBare() {
   const {
     cartItems,
     removeFromCart,
-    updateCartItems,
     incrementCount,
     decrementCount,
     calculateTotalPrice,
   } = useCart();
 
   return (
-    <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md sm:w-80 w-screen h-screen bg-white font-serif flex flex-col z-50">
+    <section className="fixed mt-14 inset-y-0 right-0 bg-opacity-70 backdrop-blur-md sm:w-80 w-screen h-screen bg-white border-l-2 border-l-slate font-serif flex flex-col z-50">
       <h1 className="m-3 gap-3 text-xl">Varukorgen</h1>
       {cartItems.map((item) => (
         <div key={item.id} className="flex justify-start gap-2 m-3">

@@ -41,11 +41,10 @@ export const CartProvider = ({ children }) => {
   };
 
   const calculateTotalPrice = () => {
-    let totalPrice = 0;
-    cartItems.forEach((item) => {
-      totalPrice += item.price * item.count;
-    });
-    return totalPrice;
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.count,
+      0
+    );
   };
 
   const updateCartItems = (updatedItems) => {
