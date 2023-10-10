@@ -22,15 +22,17 @@ export default function Home() {
             <h1 className="mx-3 md:mx-12 "> Alltid en kaffe redo</h1>
           </div>
         </section>
-        <section id="assortment" className=" flex font-serif justify-evenly">
-          <Assortment />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="contact">
-          <Form />
-        </section>
+        <div className=" flex flex-col gap-y-6 font-serif justify-center mx-12 md:mx-24 lg:mx-32">
+          <section id="assortment" className="flex justify-evenly gap-4">
+            <Assortment />
+          </section>
+          <section id="about" className="flex justify-center">
+            <About />
+          </section>
+          <section id="contact" className="flex justify-center">
+            <Form />
+          </section>
+        </div>
         <footer className="m-12 font-serif divide-y divide-black">
           <div></div>
           <div className="space-y-3 pt-12">

@@ -20,7 +20,7 @@ export default function Assortment() {
   };
 
   return (
-    <section className="font-serif mt-20">
+    <section className="font-serif mt-12">
       <h1 className="text-2xl">Sortiment</h1>
       <div className="flex flex-col md:flex-row my-12 gap-2">
         <button
@@ -56,7 +56,7 @@ export default function Assortment() {
           Alla
         </button>
       </div>
-      <ul className="grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4 hover:border-b-2">
+      <ul className="grid gap-4 justify-center md:grid-cols-2 xl:grid-cols-4">
         {filteredProducts.map((product) => (
           <li key={product.id}>
             <Card
